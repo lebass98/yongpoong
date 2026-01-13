@@ -4,7 +4,7 @@
 $apple-gradient-start: #f5f7fa;
 $apple-gradient-end: #c3cfe2;
 $apple-text-dark: #1d1d1f;
-$apple-text-light: #86868b;
+$apple-text-light: #333;
 $apple-bg-white: #ffffff;
 $apple-bg-gray: #f5f5f7;
 
@@ -175,5 +175,280 @@ $apple-bg-gray: #f5f5f7;
     right: 2rem;
     padding: 1.2rem;
     min-width: 16rem;
+  }
+}
+
+// 폰트 토글 스위치 스타일
+.font-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.font-toggle-label {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: $apple-text-dark;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.font-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 5.1rem;
+  height: 3.1rem;
+  flex-shrink: 0;
+}
+
+.font-enlarge-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 1;
+
+  &:focus + .font-toggle-slider {
+    outline: 0.2rem solid rgba(255, 215, 0, 0.3);
+    outline-offset: 0.2rem;
+  }
+
+  &:checked + .font-toggle-slider {
+    background-color: #ffd700;
+
+    &::before {
+      transform: translateX(2rem);
+    }
+  }
+
+  &:not(:checked) + .font-toggle-slider {
+    background-color: #d1d1d6;
+  }
+}
+
+.font-toggle-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d1d1d6;
+  transition: background-color 0.3s ease;
+  border-radius: 3.1rem;
+  pointer-events: none;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 2.3rem;
+    width: 2.3rem;
+    left: 0.4rem;
+    bottom: 0.4rem;
+    background-color: #ffffff;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
+  }
+}
+
+// 폰트 크기 데모 섹션 스타일
+.font-size-demo-section {
+  padding: 8rem 2rem;
+  background: $apple-bg-gray;
+}
+
+.font-size-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  gap: 3rem;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.font-size-demo-card {
+  background: $apple-bg-white;
+  border-radius: 1.8rem;
+  padding: 3rem;
+  box-shadow: 0 0.4rem 2.4rem rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: 0 0.8rem 3.2rem rgba(0, 0, 0, 0.12);
+  }
+
+  .demo-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 0.1rem solid #e5e5e7;
+  }
+
+  .demo-label {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $apple-text-dark;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .demo-size-info {
+    font-size: 1.4rem;
+    color: $apple-text-light;
+    font-weight: 400;
+  }
+
+  .demo-preview-normal {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    border-radius: 1.2rem;
+    border: 0.2rem solid #007bff;
+    opacity: 1;
+    transition: all 0.3s ease;
+
+    .preview-label {
+      font-size: 1.2rem;
+      color: #007bff;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+  }
+
+  .demo-preview-enlarged {
+    padding: 2rem;
+    background: #f5f5f7;
+    border-radius: 1.2rem;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+
+    .preview-label {
+      font-size: 1.2rem;
+      color: $apple-text-light;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+  }
+
+  .preview-text {
+    line-height: 1.6;
+    color: $apple-text-dark;
+    word-break: keep-all;
+  }
+
+  body.font-enlarge & {
+    .demo-preview-normal {
+      background: #f5f5f7;
+      border: none;
+      opacity: 0.5;
+
+      .preview-label {
+        color: $apple-text-light;
+        font-weight: 500;
+      }
+    }
+
+    .demo-preview-enlarged {
+      background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+      border: 0.2rem solid #007bff;
+      opacity: 1;
+
+      .preview-label {
+        color: #007bff;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// 각 크기별 스타일
+.font-size-12px {
+  .demo-preview-normal .preview-text {
+    font-size: 1.2rem; // 12px
+  }
+
+  .demo-preview-enlarged .preview-text {
+    font-size: 1.4rem; // 14px
+  }
+}
+
+.font-size-13px {
+  .demo-preview-normal .preview-text {
+    font-size: 1.3rem; // 13px
+  }
+
+  .demo-preview-enlarged .preview-text {
+    font-size: 1.5rem; // 15px
+  }
+}
+
+.font-size-14px {
+  .demo-preview-normal .preview-text {
+    font-size: 1.4rem; // 14px
+  }
+
+  .demo-preview-enlarged .preview-text {
+    font-size: 1.8rem; // 18px
+  }
+}
+
+.font-size-18px {
+  .demo-preview-normal .preview-text {
+    font-size: 1.8rem; // 18px
+  }
+
+  .demo-preview-enlarged .preview-text {
+    font-size: 2.2rem; // 22px
+  }
+}
+
+.font-size-24px {
+  .demo-preview-normal .preview-text {
+    font-size: 2.4rem; // 24px
+  }
+
+  .demo-preview-enlarged .preview-text {
+    font-size: 2.6rem; // 26px
+  }
+}
+
+.font-size-32px {
+  .demo-preview-normal .preview-text {
+    font-size: 3.2rem; // 32px
+  }
+
+  .demo-preview-enlarged .preview-text {
+    font-size: 3.6rem; // 36px
+  }
+}
+
+// 폰트 키우기 활성화 시 - 실제 텍스트 크기 변경
+body.font-enlarge {
+  .font-size-12px .demo-preview-normal .preview-text {
+    font-size: 1.4rem !important; // 12px → 14px
+  }
+
+  .font-size-13px .demo-preview-normal .preview-text {
+    font-size: 1.5rem !important; // 13px → 15px
+  }
+
+  .font-size-14px .demo-preview-normal .preview-text {
+    font-size: 1.8rem !important; // 14px → 18px
+  }
+
+  .font-size-18px .demo-preview-normal .preview-text {
+    font-size: 2.2rem !important; // 18px → 22px
+  }
+
+  .font-size-24px .demo-preview-normal .preview-text {
+    font-size: 2.6rem !important; // 24px → 26px
+  }
+
+  .font-size-32px .demo-preview-normal .preview-text {
+    font-size: 3.6rem !important; // 32px → 36px
   }
 }
