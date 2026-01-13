@@ -1,0 +1,70 @@
+// 유틸리티 클래스
+
+// 글씨 크기 조절 클래스
+// 기본 글씨 크기를 CSS 변수로 관리
+:root {
+  --font-size-scale: #{$font-scale-normal};
+}
+
+// 글씨 크기 조절 상태 클래스
+body {
+  &.font-small {
+    --font-size-scale: #{$font-scale-small};
+  }
+
+  &.font-normal {
+    --font-size-scale: #{$font-scale-normal};
+  }
+
+  &.font-large {
+    --font-size-scale: #{$font-scale-large};
+  }
+
+  &.font-xlarge {
+    --font-size-scale: #{$font-scale-xlarge};
+  }
+
+  &.font-xxlarge {
+    --font-size-scale: #{$font-scale-xxlarge};
+  }
+}
+
+// 글씨 크기가 적용되는 요소들
+p,
+span,
+a,
+li,
+td,
+th,
+label,
+input,
+textarea,
+select,
+button {
+  font-size: calc(#{$font-size-base} * var(--font-size-scale, 1));
+}
+
+// 제목 태그는 비례적으로 조절
+h1 {
+  font-size: calc(2.5rem * var(--font-size-scale, 1));
+}
+
+h2 {
+  font-size: calc(2rem * var(--font-size-scale, 1));
+}
+
+h3 {
+  font-size: calc(1.75rem * var(--font-size-scale, 1));
+}
+
+h4 {
+  font-size: calc(1.5rem * var(--font-size-scale, 1));
+}
+
+h5 {
+  font-size: calc(1.25rem * var(--font-size-scale, 1));
+}
+
+h6 {
+  font-size: calc(1rem * var(--font-size-scale, 1));
+}

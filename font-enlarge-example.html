@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>폰트 키우기 라디오 버튼 예제</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- 폰트 키우기 라디오 버튼 -->
+  <div class="font-control-panel">
+    <div class="panel-title">글자 크기 조정</div>
+    
+    <div class="font-enlarge-control">
+      <div class="radio-group">
+        <input type="radio" id="font-off" name="font-enlarge" class="font-enlarge-radio" value="off" checked>
+        <label for="font-off">
+          <span class="font-size-preview">보통</span>
+        </label>
+      </div>
+      
+      <div class="radio-group">
+        <input type="radio" id="font-on" name="font-enlarge" class="font-enlarge-radio" value="on">
+        <label for="font-on">
+          <span class="font-size-preview">크게</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h1 class="example-title-large">제목 (3.2rem → 3.6rem / 32px → 36px)</h1>
+    <h2 class="example-title-medium">제목 2 (2.4rem → 2.6rem / 24px → 26px)</h2>
+    <h3 class="example-title-small">제목 3 (1.8rem → 2.2rem / 18px → 22px)</h3>
+    
+    <p class="example-text-large">이것은 1.4rem 텍스트입니다. (1.4rem → 1.8rem / 14px → 18px)</p>
+    
+    <p class="example-text-medium">이것은 1.3rem 텍스트입니다. (1.3rem → 1.5rem / 13px → 15px)</p>
+    
+    <p class="example-text-small">이것은 1.2rem 텍스트입니다. (1.2rem → 1.4rem / 12px → 14px)</p>
+    
+    <div class="example-info-box">
+      <p>크기 매핑 (1rem = 10px):</p>
+      <ul>
+        <li>1.2rem → 1.4rem (12px → 14px)</li>
+        <li>1.3rem → 1.5rem (13px → 15px)</li>
+        <li>1.4rem → 1.8rem (14px → 18px)</li>
+        <li>1.8rem → 2.2rem (18px → 22px)</li>
+        <li>2.4rem → 2.6rem (24px → 26px)</li>
+        <li>3.2rem → 3.6rem (32px → 36px)</li>
+      </ul>
+    </div>
+    
+    <div class="example-info-box example-test-box">
+      <p>테스트: 1rem 크기 텍스트 (1rem = 10px)</p>
+      <p class="example-1rem-text">이 텍스트는 1rem (10px)입니다.</p>
+    </div>
+  </div>
+
+  <script src="font-enlarge-control.js"></script>
+</body>
+</html>

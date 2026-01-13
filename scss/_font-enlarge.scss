@@ -1,0 +1,78 @@
+// 폰트 키우기 유틸리티
+// 특정 크기 → 더 큰 크기로 매핑 (1rem = 10px 기준)
+
+// 폰트 키우기 활성화 클래스
+body.font-enlarge {
+  // 클래스 기반 크기 매핑
+  
+  .example-text-small {
+    font-size: 1.4rem !important; // 1.2rem → 1.4rem (12px → 14px)
+  }
+  
+  .example-text-medium {
+    font-size: 1.5rem !important; // 1.3rem → 1.5rem (13px → 15px)
+  }
+  
+  .example-text-large {
+    font-size: 1.8rem !important; // 1.4rem → 1.8rem (14px → 18px)
+  }
+  
+  .example-title-small {
+    font-size: 2.2rem !important; // 1.8rem → 2.2rem (18px → 22px)
+  }
+  
+  .example-title-medium {
+    font-size: 2.6rem !important; // 2.4rem → 2.6rem (24px → 26px)
+  }
+  
+  .example-title-large {
+    font-size: 3.6rem !important; // 3.2rem → 3.6rem (32px → 36px)
+  }
+  
+  // 애플 스타일 크기 매핑
+  .apple-title {
+    font-size: 6.2rem !important; // 5.6rem → 6.2rem (56px → 62px)
+    
+    @media (max-width: 768px) {
+      font-size: 4.4rem !important; // 40px → 44px
+    }
+  }
+  
+  .apple-subtitle {
+    font-size: 2.3rem !important; // 2.1rem → 2.3rem (21px → 23px)
+    
+    @media (max-width: 768px) {
+      font-size: 2.1rem !important; // 19px → 21px
+    }
+  }
+  
+  .apple-section-title {
+    font-size: 5.3rem !important; // 4.8rem → 5.3rem (48px → 53px)
+    
+    @media (max-width: 768px) {
+      font-size: 4rem !important; // 36px → 40px
+    }
+  }
+  
+  .apple-section-text {
+    font-size: 2.3rem !important; // 2.1rem → 2.3rem (21px → 23px)
+    
+    @media (max-width: 768px) {
+      font-size: 2.1rem !important; // 19px → 21px
+    }
+  }
+  
+  .apple-card {
+    h3 {
+      font-size: 3.1rem !important; // 2.8rem → 3.1rem (28px → 31px)
+    }
+    
+    p {
+      font-size: 1.9rem !important; // 1.7rem → 1.9rem (17px → 19px)
+    }
+    
+    ul {
+      font-size: 1.9rem !important; // 1.7rem → 1.9rem (17px → 19px)
+    }
+  }
+}

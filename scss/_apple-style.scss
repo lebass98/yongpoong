@@ -1,0 +1,179 @@
+// 애플 스타일 디자인
+
+// 그라데이션 및 색상
+$apple-gradient-start: #f5f7fa;
+$apple-gradient-end: #c3cfe2;
+$apple-text-dark: #1d1d1f;
+$apple-text-light: #86868b;
+$apple-bg-white: #ffffff;
+$apple-bg-gray: #f5f5f7;
+
+// 섹션 스타일
+.apple-hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8rem 2rem;
+  background: linear-gradient(135deg, $apple-gradient-start 0%, $apple-gradient-end 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.apple-title {
+  font-size: 5.6rem; // 56px
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: $apple-text-dark;
+  margin-bottom: 1.2rem;
+  line-height: 1.05;
+
+  @media (max-width: 768px) {
+    font-size: 4rem; // 40px
+  }
+}
+
+.apple-subtitle {
+  font-size: 2.1rem; // 21px
+  font-weight: 400;
+  color: $apple-text-light;
+  margin-bottom: 3rem;
+  line-height: 1.4;
+  max-width: 60rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.9rem; // 19px
+  }
+}
+
+.apple-section {
+  padding: 8rem 2rem;
+  background: $apple-bg-white;
+
+  &:nth-child(even) {
+    background: $apple-bg-gray;
+  }
+}
+
+.apple-container {
+  max-width: 98rem;
+  margin: 0 auto;
+}
+
+.apple-section-title {
+  font-size: 4.8rem; // 48px
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: $apple-text-dark;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  line-height: 1.05;
+
+  @media (max-width: 768px) {
+    font-size: 3.6rem; // 36px
+  }
+}
+
+.apple-section-text {
+  font-size: 2.1rem; // 21px
+  font-weight: 400;
+  color: $apple-text-light;
+  text-align: center;
+  margin-bottom: 4rem;
+  line-height: 1.4;
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 768px) {
+    font-size: 1.9rem; // 19px
+  }
+}
+
+.apple-card {
+  background: $apple-bg-white;
+  border-radius: 1.8rem;
+  padding: 4rem;
+  box-shadow: 0 0.4rem 2.4rem rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 3rem;
+
+  &:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: 0 0.8rem 3.2rem rgba(0, 0, 0, 0.12);
+  }
+
+  h3 {
+    font-size: 2.8rem; // 28px
+    font-weight: 600;
+    color: $apple-text-dark;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    font-size: 1.7rem; // 17px
+    color: $apple-text-light;
+    line-height: 1.5;
+    margin-bottom: 1.6rem;
+  }
+
+  ul {
+    font-size: 1.7rem; // 17px
+    color: $apple-text-light;
+    line-height: 1.8;
+    padding-left: 2rem;
+
+    li {
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+
+.apple-control-panel {
+  position: fixed;
+  top: 3rem;
+  right: 3rem;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 1.6rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);
+  min-width: auto;
+  border: 0.1rem solid rgba(0, 0, 0, 0.05);
+
+  .panel-title {
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem; // 13px
+    color: $apple-text-dark;
+    letter-spacing: -0.01em;
+  }
+
+  @media (max-width: 768px) {
+    top: 2rem;
+    right: 2rem;
+    padding: 1.2rem;
+    min-width: 16rem;
+  }
+}

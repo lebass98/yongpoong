@@ -1,0 +1,12 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "sass:watch": "sass --watch scss:css",
+    "sass:build": "sass scss:css --style compressed"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}
